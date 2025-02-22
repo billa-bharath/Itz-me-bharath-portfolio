@@ -1,0 +1,128 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  
+  /* box-sizing: border-box; */
+}
+
+/* Sliding Container */
+.sliding-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+  overflow: hidden;
+  flex-direction: row; /* Align items horizontally by default */
+  text-align: center; /* Center align text */
+}
+
+/* Image Section */
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1.5s ease-in-out;
+}
+
+.image-section.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.bharath {
+  width: 140%;
+  max-width: 5000px;
+  transition: transform 1.5s ease-in-out;
+}
+
+/* Text Section */
+.text-section {
+  flex: 1;
+  padding: 2rem;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items in column */
+  justify-content: center;
+}
+
+.text-section.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Heading Animation */
+.heading {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #087ddd;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeSlideIn 1.2s ease-out forwards;
+  animation-delay: 1s;
+}
+
+/* Name Animation */
+.name {
+  font-size: 3rem;
+  color: #070707;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeSlideIn 2s ease-out forwards;
+  animation-delay: 2.5s;
+}
+
+/* Paragraph Animation */
+.para {
+  font-size: 1.11rem;
+  color: #0e0e0e;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeSlideIn 1.2s ease-out forwards;
+  animation-delay: 2s;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sliding-container {
+    flex-direction: column;
+    text-align: center; /* Center text for mobile */
+  }
+
+  .image-section,
+  .text-section {
+    transform: translateY(50px);
+  }
+
+  .image-section.visible,
+  .text-section.visible {
+    transform: translateY(10px);
+    transition-delay: 0ms;
+  }
+
+  .text-section {
+    padding: 1rem;
+  }
+}

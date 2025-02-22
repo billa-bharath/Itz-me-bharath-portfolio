@@ -1,0 +1,149 @@
+/* 🌍 Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #c0b8b8, #e0e0e0);
+  color: #070707;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 🌙 Dark Mode */
+[data-theme="dark"] {
+  background: linear-gradient(135deg, #121212, #2a2a2a);
+  color: #080606;
+}
+
+/* 🔥 Projects Section */
+.projects-container {
+  max-width: 1200px;
+  margin: 80px auto 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #007bff;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* 🔹 Project List */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* 📌 Project Cards */
+.project-card {
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(241, 40, 40, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.6s ease-in-out;
+}
+
+/* 🏴‍☠️ Dark Mode Styles */
+[data-theme="dark"] .project-card {
+  background: linear-gradient(135deg, #222, #444);
+  box-shadow: 0 8px 20px rgba(231, 22, 22, 0.1);
+}
+
+/* 🎭 3D Hover Effect */
+.project-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 🏷 Project Title */
+.project-title {
+  font-size: 1.5rem;
+  color: #024a97;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 📝 Project Description */
+.project-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* 🎨 Dark Mode Adjustments */
+[data-theme="dark"] .project-description {
+  color: #ddd;
+}
+
+/* 🔧 Technologies Used */
+.project-technologies {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+[data-theme="dark"] .project-technologies {
+  color: #bbb;
+}
+
+/* 🔗 View Project Button */
+.project-link {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.project-link:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #15cca4, #003d7a);
+}
+
+/* 🏆 Responsive */
+@media (max-width: 768px) {
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

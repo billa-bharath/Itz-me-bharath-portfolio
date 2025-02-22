@@ -1,0 +1,103 @@
+.timeline-container {
+  padding: 20px;
+  background: #ccc2d6;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(92, 43, 43, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.timeline-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #070404;
+  margin-bottom: 20px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-in-out;
+  background: #45434b;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(233, 134, 5, 0.1);
+  padding: 15px;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(253, 8, 8, 0.2);
+  background: linear-gradient(135deg, #65c4c4, #f0beb0);
+  transition: all 0.1s ease-in-out;
+}
+
+.timeline-marker {
+  width: 15px;
+  height: 15px;
+  background-color: #020000;
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: background-color 0.1s ease;
+}
+
+.timeline-item.visible .timeline-marker {
+  background-color: #000000;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1356ad;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.timeline-item:hover .project-title {
+  color: #111111;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.project-technologies {
+  font-size: 1rem;
+  color: #444;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff6f61;
+  border: 2px solid #ff6f61;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #ff6f61;
+  color: #fff;
+}
