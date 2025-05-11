@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Bharath from '../components/Adobe Express - file.png';
+import Bharath from '../components/profile.jpeg';
 import './Home.css';
 import Type from './Type'; // Corrected import path
 
